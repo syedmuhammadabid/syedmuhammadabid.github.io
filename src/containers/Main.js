@@ -19,7 +19,22 @@ import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
+import {observeSections} from "../analytics";
 import "./Main.scss";
+
+const SECTION_IDS = [
+  "greeting",
+  "skills",
+  "education",
+  "experience",
+  "opensource",
+  "projects",
+  "achievements",
+  "blogs",
+  "talks",
+  "twitter",
+  "contact"
+];
 
 const Main = () => {
   const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
@@ -38,6 +53,13 @@ const Main = () => {
       };
     }
   }, []);
+
+  useEffect(() => {
+    if (isShowingSplashAnimation && splashScreen.enabled) {
+      return undefined;
+    }
+    return observeSections(SECTION_IDS);
+  }, [isShowingSplashAnimation]);
 
   const changeTheme = () => {
     setIsDark(!isDark);

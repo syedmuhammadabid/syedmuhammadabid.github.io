@@ -1,13 +1,33 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import "./SocialMedia.scss";
 import {socialMediaLinks} from "../../portfolio";
+import {trackEvent} from "../../analytics";
 
-export default function socialMedia() {
+export default function SocialMedia() {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) {
+      return undefined;
+    }
+    const handleClick = e => {
+      const link = e.target.closest("a.icon-button");
+      if (!link) {
+        return;
+      }
+      const platform = link.className.replace("icon-button", "").trim();
+      trackEvent("social_click", {social_platform: platform, link_url: link.href});
+    };
+    container.addEventListener("click", handleClick);
+    return () => container.removeEventListener("click", handleClick);
+  }, []);
+
   if (!socialMediaLinks.display) {
     return null;
   }
   return (
-    <div className="social-media-div">
+    <div className="social-media-div" ref={containerRef}>
       {socialMediaLinks.github ? (
         <a
           href={socialMediaLinks.github}
