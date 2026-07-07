@@ -58,6 +58,12 @@
   color: $subTitle;
 }
 
+.contact-details {
+  opacity: 0.5;
+  line-height: normal;
+  font-size: 17px;
+}
+
 @media (max-width: 768px) {
   .row {
     display: flex;
