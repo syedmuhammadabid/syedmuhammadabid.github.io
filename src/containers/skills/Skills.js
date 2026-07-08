@@ -26,7 +26,11 @@ export default function Skills() {
     return null;
   }
   return (
-    <section className={isDark ? "dark-mode main" : "main"} id="skills" aria-label="Skills">
+    <section
+      className={isDark ? "dark-mode main" : "main"}
+      id="skills"
+      aria-label="Skills"
+    >
       <div className="skills-main-div">
         <Fade left duration={1000}>
           <div className="skills-image-div">

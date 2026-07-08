@@ -24,7 +24,11 @@ export default function Contact() {
 
   return (
     <Fade bottom duration={1000} distance="20px">
-      <section className="main contact-margin-top" id="contact" aria-label="Contact">
+      <section
+        className="main contact-margin-top"
+        id="contact"
+        aria-label="Contact"
+      >
         <div className="contact-div-main">
           <div className="contact-header">
             <h2 className="heading contact-title">{contactInfo.title}</h2>

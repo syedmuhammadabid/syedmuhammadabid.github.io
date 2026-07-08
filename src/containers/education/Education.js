@@ -6,7 +6,11 @@ import {educationInfo} from "../../portfolio";
 export default function Education() {
   if (educationInfo.display) {
     return (
-      <section className="education-section" id="education" aria-label="Education">
+      <section
+        className="education-section"
+        id="education"
+        aria-label="Education"
+      >
         <h2 className="education-heading">Education</h2>
         <div className="education-card-container">
           {educationInfo.schools.map((school, index) => (

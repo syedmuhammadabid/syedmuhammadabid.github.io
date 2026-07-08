@@ -44,7 +44,11 @@ export default function Projects() {
   ) {
     return (
       <Suspense fallback={renderLoader()}>
-        <section className="main" id="opensource" aria-label="Open Source Projects">
+        <section
+          className="main"
+          id="opensource"
+          aria-label="Open Source Projects"
+        >
           <h2 className="project-title">Open Source Projects</h2>
           <div className="repo-cards-div-main">
             {repo.map((v, i) => {

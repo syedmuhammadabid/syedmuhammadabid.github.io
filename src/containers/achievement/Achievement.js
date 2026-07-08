@@ -11,7 +11,11 @@ export default function Achievement() {
   }
   return (
     <Fade bottom duration={1000} distance="20px">
-      <section className="main" id="achievements" aria-label="Achievements and Certifications">
+      <section
+        className="main"
+        id="achievements"
+        aria-label="Achievements and Certifications"
+      >
         <div className="achievement-main-div">
           <div className="achievement-header">
             <h2

@@ -62,7 +62,9 @@
   "reactSnap": {
     "source": "build",
     "inlineCss": true,
-    "include": ["/"],
+    "include": [
+      "/"
+    ],
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox"

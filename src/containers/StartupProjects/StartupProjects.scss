@@ -27,7 +27,8 @@
   justify-content: center;
 }
 .project-card-light {
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04),
+    0 4px 12px rgba(15, 23, 42, 0.06);
   -webkit-transition: box-shadow 0.3s ease, transform 0.3s ease;
   -o-transition: box-shadow 0.3s ease, transform 0.3s ease;
   transition: box-shadow 0.3s ease, transform 0.3s ease;

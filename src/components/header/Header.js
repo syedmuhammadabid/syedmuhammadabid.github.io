@@ -31,52 +31,52 @@ function Header() {
           <span className={isDark ? "navicon navicon-dark" : "navicon"}></span>
         </label>
         <nav aria-label="Main navigation">
-        <ul className={isDark ? "dark-menu menu" : "menu"}>
-          {viewSkills && (
+          <ul className={isDark ? "dark-menu menu" : "menu"}>
+            {viewSkills && (
+              <li>
+                <a href="#skills">Skills</a>
+              </li>
+            )}
+            {viewExperience && (
+              <li>
+                <a href="#experience">Work Experiences</a>
+              </li>
+            )}
+            {viewOpenSource && (
+              <li>
+                <a href="#opensource">Open Source</a>
+              </li>
+            )}
+            {viewAchievement && (
+              <li>
+                <a href="#achievements">Achievements</a>
+              </li>
+            )}
+            {viewBlog && (
+              <li>
+                <a href="#blogs">Blogs</a>
+              </li>
+            )}
+            {viewTalks && (
+              <li>
+                <a href="#talks">Talks</a>
+              </li>
+            )}
+            {viewResume && (
+              <li>
+                <a href="#resume">Resume</a>
+              </li>
+            )}
             <li>
-              <a href="#skills">Skills</a>
+              <a href="#contact">Contact Me</a>
             </li>
-          )}
-          {viewExperience && (
             <li>
-              <a href="#experience">Work Experiences</a>
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+              <a>
+                <ToggleSwitch />
+              </a>
             </li>
-          )}
-          {viewOpenSource && (
-            <li>
-              <a href="#opensource">Open Source</a>
-            </li>
-          )}
-          {viewAchievement && (
-            <li>
-              <a href="#achievements">Achievements</a>
-            </li>
-          )}
-          {viewBlog && (
-            <li>
-              <a href="#blogs">Blogs</a>
-            </li>
-          )}
-          {viewTalks && (
-            <li>
-              <a href="#talks">Talks</a>
-            </li>
-          )}
-          {viewResume && (
-            <li>
-              <a href="#resume">Resume</a>
-            </li>
-          )}
-          <li>
-            <a href="#contact">Contact Me</a>
-          </li>
-          <li>
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a>
-              <ToggleSwitch />
-            </a>
-          </li>
-        </ul>
+          </ul>
         </nav>
       </header>
     </div>

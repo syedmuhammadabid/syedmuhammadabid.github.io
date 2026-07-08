@@ -36,10 +36,10 @@ const chromePaths = [
   "/usr/bin/google-chrome-stable",
   "/usr/bin/google-chrome",
   "/usr/bin/chromium-browser",
-  "/usr/bin/chromium",
+  "/usr/bin/chromium"
 ];
 
-const chromePath = chromePaths.find((p) => p && fs.existsSync(p));
+const chromePath = chromePaths.find(p => p && fs.existsSync(p));
 
 if (!chromePath) {
   console.error(
@@ -55,7 +55,7 @@ try {
     stdio: ["inherit", "inherit", "pipe"],
     cwd: path.resolve(__dirname, ".."),
     env: {...process.env, PUPPETEER_EXECUTABLE_PATH: chromePath},
-    timeout: 60000,
+    timeout: 60000
   });
 } catch (e) {
   // react-snap on Windows emits harmless "could not be terminated" errors
@@ -63,8 +63,8 @@ try {
   const stderr = e.stderr ? e.stderr.toString() : "";
   const isOnlyCleanupNoise = stderr
     .split("\n")
-    .filter((line) => line.trim())
-    .every((line) => line.includes("could not be terminated"));
+    .filter(line => line.trim())
+    .every(line => line.includes("could not be terminated"));
 
   if (!isOnlyCleanupNoise) {
     console.warn("⚠️  react-snap failed (non-fatal):", stderr.slice(0, 200));

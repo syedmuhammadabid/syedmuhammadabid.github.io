@@ -48,10 +48,4 @@ const navDisplay = {
   resume: true
 };
 
-export {
-  splashScreen,
-  illustration,
-  greeting,
-  socialMediaLinks,
-  navDisplay
-};
+export {splashScreen, illustration, greeting, socialMediaLinks, navDisplay};

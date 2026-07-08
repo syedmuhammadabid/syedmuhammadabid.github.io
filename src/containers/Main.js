@@ -69,9 +69,7 @@ const Main = () => {
   return (
     <div className={isDark ? "dark-mode" : null}>
       <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
-        {isShowingSplashAnimation && splashScreen.enabled ? (
-          null
-        ) : (
+        {isShowingSplashAnimation && splashScreen.enabled ? null : (
           <>
             <Header />
             <main id="main-content">

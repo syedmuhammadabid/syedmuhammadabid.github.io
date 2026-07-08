@@ -1,11 +1,11 @@
 import React from "react";
 import "./GithubProfileCard.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
-import { contactInfo, isHireable } from "../../portfolio";
+import {contactInfo, isHireable} from "../../portfolio";
 import {emoji} from "../../utils";
-import { Fade } from "react-reveal";
+import {Fade} from "react-reveal";
 
-export default function GithubProfileCard({ prof }) {
+export default function GithubProfileCard({prof}) {
   if (isHireable) {
     prof.hireable = "Yes";
   } else {
@@ -47,12 +47,18 @@ export default function GithubProfileCard({ prof }) {
               </span>
             </div>
             <div>
-              <a href={`mailto:${contactInfo.email_address}`} className="contact-details contact-link">
+              <a
+                href={`mailto:${contactInfo.email_address}`}
+                className="contact-details contact-link"
+              >
                 Email: {contactInfo.email_address}
               </a>
             </div>
             <div className="opp-div">
-              <a href={`tel:${contactInfo.number}`} className="contact-details contact-link">
+              <a
+                href={`tel:${contactInfo.number}`}
+                className="contact-details contact-link"
+              >
                 Phone: {contactInfo.number}
               </a>
             </div>

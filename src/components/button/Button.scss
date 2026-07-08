@@ -18,7 +18,8 @@
   letter-spacing: 0.01em;
   cursor: pointer;
   box-shadow: 0 4px 14px rgba(108, 60, 224, 0.25);
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .main-button:hover {
   background-color: $buttonHover;
