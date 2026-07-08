@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.68604ecd.css",
-    "main.js": "/static/js/main.99036ab7.js",
-    "static/css/141.a28b6416.chunk.css": "/static/css/141.a28b6416.chunk.css",
+    "main.css": "/static/css/main.7ef6fbd9.css",
+    "main.js": "/static/js/main.cd0551a5.js",
+    "static/css/141.8a0b76cc.chunk.css": "/static/css/141.8a0b76cc.chunk.css",
     "static/js/141.aa42f1e1.chunk.js": "/static/js/141.aa42f1e1.chunk.js",
     "static/css/769.cc4a0daa.chunk.css": "/static/css/769.cc4a0daa.chunk.css",
     "static/js/769.47d8c30b.chunk.js": "/static/js/769.47d8c30b.chunk.js",
@@ -20,15 +20,15 @@
     "static/media/atexLogo.svg": "/static/media/atexLogo.04db337cfc6488118bfdedfd2c2b6176.svg",
     "index.html": "/index.html",
     "static/media/talksCardBack.svg": "/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
-    "main.68604ecd.css.map": "/static/css/main.68604ecd.css.map",
-    "main.99036ab7.js.map": "/static/js/main.99036ab7.js.map",
-    "141.a28b6416.chunk.css.map": "/static/css/141.a28b6416.chunk.css.map",
+    "main.7ef6fbd9.css.map": "/static/css/main.7ef6fbd9.css.map",
+    "main.cd0551a5.js.map": "/static/js/main.cd0551a5.js.map",
+    "141.8a0b76cc.chunk.css.map": "/static/css/141.8a0b76cc.chunk.css.map",
     "141.aa42f1e1.chunk.js.map": "/static/js/141.aa42f1e1.chunk.js.map",
     "769.cc4a0daa.chunk.css.map": "/static/css/769.cc4a0daa.chunk.css.map",
     "769.47d8c30b.chunk.js.map": "/static/js/769.47d8c30b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.68604ecd.css",
-    "static/js/main.99036ab7.js"
+    "static/css/main.7ef6fbd9.css",
+    "static/js/main.cd0551a5.js"
   ]
 }
