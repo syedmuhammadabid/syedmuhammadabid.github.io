@@ -7,8 +7,10 @@ export default function ExperienceCard({cardInfo, isDark}) {
   const imgRef = createRef();
 
   function getColorArrays() {
-    const colorThief = new ColorThief();
-    setColorArrays(colorThief.getColor(imgRef.current));
+    requestAnimationFrame(() => {
+      const colorThief = new ColorThief();
+      setColorArrays(colorThief.getColor(imgRef.current));
+    });
   }
 
   function rgb(values) {

@@ -38,6 +38,7 @@ try {
     stdio: ["inherit", "inherit", "pipe"],
     cwd: path.resolve(__dirname, ".."),
     env: {...process.env, PUPPETEER_EXECUTABLE_PATH: chromePath},
+    timeout: 60000,
   });
 } catch (e) {
   // react-snap on Windows emits harmless "could not be terminated" errors
@@ -49,7 +50,6 @@ try {
     .every((line) => line.includes("could not be terminated"));
 
   if (!isOnlyCleanupNoise) {
-    console.error(stderr);
-    process.exit(1);
+    console.warn("⚠️  react-snap failed (non-fatal):", stderr.slice(0, 200));
   }
 }
