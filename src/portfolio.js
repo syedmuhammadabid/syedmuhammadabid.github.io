@@ -21,9 +21,9 @@ const illustration = {
 
 const greeting = {
   username: "S. M. Abid",
-  title: "Hi all, I'm S. M. Abid",
+  title: "Hi, I'm Syed Muhammad Abid",
   subTitle: emoji(
-    "A Senior Full-Stack Software Engineer 🚀 with 7+ years building enterprise-scale web applications across publishing, e-commerce, retail, and fintech using React.js, Next.js, Node.js, Ruby on Rails, and AWS. Currently pursuing an MS in Data Science."
+    "A Senior Full-Stack Software Engineer 🚀 with 7+ years building enterprise-scale web applications. React.js developer, Node.js engineer, and Ruby on Rails developer specializing in AWS cloud architecture. Remote software engineer available across Europe, North America, and UAE."
   ),
   resumeLink:
     "https://docs.google.com/document/d/1gD522PiIoFVb9tdYK7ZsNtsK5Ah1nnQTkB8IefjdcS4/edit?usp=sharing", // Set to empty to hide the button
@@ -48,9 +48,9 @@ const socialMediaLinks = {
 // Skills Section
 
 const skillsSection = {
-  title: "What I do",
+  title: "What I Do",
   subTitle:
-    "SENIOR FULL-STACK ENGINEER ARCHITECTING SCALABLE, SECURE, CLOUD-NATIVE SYSTEMS",
+    "SENIOR FULL-STACK SOFTWARE ENGINEER & AWS CLOUD ENGINEER — ARCHITECTING SCALABLE, SECURE, CLOUD-NATIVE SYSTEMS",
   skills: [
     emoji(
       "⚡ Build highly interactive front ends with React.js, Next.js, Redux, and TypeScript"

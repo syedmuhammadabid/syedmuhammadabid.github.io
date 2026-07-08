@@ -9,11 +9,11 @@ export default function WorkExperience() {
   const {isDark} = useContext(StyleContext);
   if (workExperiences.display) {
     return (
-      <div id="experience">
+      <section id="experience" aria-label="Work Experience">
         <div className="experience-container" id="workExperience">
           <div>
             <Fade bottom duration={1000} distance="20px">
-              <h1 className="experience-heading">Experiences</h1>
+              <h2 className="experience-heading">Experiences</h2>
             </Fade>
             <div className="experience-cards-div">
               {workExperiences.experience.map((card, i) => {
@@ -36,7 +36,7 @@ export default function WorkExperience() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     );
   }
   return null;

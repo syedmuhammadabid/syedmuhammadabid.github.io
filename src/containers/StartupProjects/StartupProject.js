@@ -21,9 +21,9 @@ export default function StartupProject() {
   }
   return (
     <Fade bottom duration={1000} distance="20px">
-      <div className="main" id="projects">
+      <section className="main" id="projects" aria-label="Notable Projects">
         <div>
-          <h1 className="skills-heading">{bigProjects.title}</h1>
+          <h2 className="skills-heading">{bigProjects.title}</h2>
           <p
             className={
               isDark
@@ -51,6 +51,7 @@ export default function StartupProject() {
                         src={project.image}
                         alt={project.projectName}
                         className="card-image"
+                        loading="lazy"
                       ></img>
                     </div>
                   ) : null}
@@ -90,7 +91,7 @@ export default function StartupProject() {
             })}
           </div>
         </div>
-      </div>
+      </section>
     </Fade>
   );
 }

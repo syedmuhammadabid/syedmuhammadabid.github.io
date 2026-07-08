@@ -16,7 +16,7 @@ export default function Greeting() {
   }
   return (
     <Fade bottom duration={1000} distance="40px">
-      <div className="greet-main" id="greeting">
+      <section className="greet-main" id="greeting" aria-label="Introduction">
         <div className="greeting-main">
           <div className="greeting-text-div">
             <div>
@@ -57,13 +57,16 @@ export default function Greeting() {
               <DisplayLottie animationData={landingPerson} />
             ) : (
               <img
-                alt="man sitting on table"
+                alt="Syed Muhammad Abid — Senior Full-Stack Software Engineer working at desk"
                 src={require("../../assets/images/manOnTable.svg")}
+                width="400"
+                height="400"
+                loading="lazy"
               ></img>
             )}
           </div>
         </div>
-      </div>
+      </section>
     </Fade>
   );
 }

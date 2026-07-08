@@ -40,6 +40,7 @@ function Header() {
         >
           <span className={isDark ? "navicon navicon-dark" : "navicon"}></span>
         </label>
+        <nav aria-label="Main navigation">
         <ul className={isDark ? "dark-menu menu" : "menu"}>
           {viewSkills && (
             <li>
@@ -86,6 +87,7 @@ function Header() {
             </a>
           </li>
         </ul>
+        </nav>
       </header>
     </Headroom>
   );

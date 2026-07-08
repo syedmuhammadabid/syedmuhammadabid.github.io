@@ -24,6 +24,7 @@
     "predeploy": "npm run build",
     "start": "node fetch.js && react-scripts start",
     "build": "node fetch.js && react-scripts build",
+    "postbuild": "node scripts/postbuild.js",
     "deploy": "gh-pages -b gh-pages -d build",
     "og-banner": "node scripts/generate-og-banner.js",
     "test": "react-scripts test",
@@ -55,6 +56,15 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "dotenv": "^8.2.0",
     "prettier": "^2.3.1",
+    "react-snap": "^1.23.0",
     "sharp": "^0.35.1"
+  },
+  "reactSnap": {
+    "source": "build",
+    "inlineCss": true,
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   }
 }

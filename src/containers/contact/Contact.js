@@ -11,10 +11,10 @@ export default function Contact() {
   const {isDark} = useContext(StyleContext);
   return (
     <Fade bottom duration={1000} distance="20px">
-      <div className="main contact-margin-top" id="contact">
+      <section className="main contact-margin-top" id="contact" aria-label="Contact">
         <div className="contact-div-main">
           <div className="contact-header">
-            <h1 className="heading contact-title">{contactInfo.title}</h1>
+            <h2 className="heading contact-title">{contactInfo.title}</h2>
             <p
               className={
                 isDark
@@ -57,13 +57,16 @@ export default function Contact() {
               <DisplayLottie animationData={email} />
             ) : (
               <img
-                alt="Man working"
+                alt="Contact Syed Muhammad Abid — remote software engineer available for hire"
                 src={require("../../assets/images/contactMailDark.svg")}
+                width="400"
+                height="400"
+                loading="lazy"
               ></img>
             )}
           </div>
         </div>
-      </div>
+      </section>
     </Fade>
   );
 }

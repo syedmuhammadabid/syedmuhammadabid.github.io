@@ -11,7 +11,6 @@ export default function Projects() {
   const FailedLoading = () => null;
   const renderLoader = () => <Loading />;
   const [repo, setrepo] = useState([]);
-  // todo: remove useContex because is not supported
   const {isDark} = useContext(StyleContext);
 
   useEffect(() => {
@@ -45,8 +44,8 @@ export default function Projects() {
   ) {
     return (
       <Suspense fallback={renderLoader()}>
-        <div className="main" id="opensource">
-          <h1 className="project-title">Open Source Projects</h1>
+        <section className="main" id="opensource" aria-label="Open Source Projects">
+          <h2 className="project-title">Open Source Projects</h2>
           <div className="repo-cards-div-main">
             {repo.map((v, i) => {
               if (!v) {
@@ -65,7 +64,7 @@ export default function Projects() {
             href={socialMediaLinks.github}
             newTab={true}
           />
-        </div>
+        </section>
       </Suspense>
     );
   } else {

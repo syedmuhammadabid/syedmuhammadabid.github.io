@@ -73,19 +73,21 @@ const Main = () => {
         ) : (
           <>
             <Header />
-            <Greeting />
-            <Skills />
-            <StackProgress />
-            <Education />
-            <WorkExperience />
-            <Projects />
-            <StartupProject />
-            <Achievement />
-            <Blogs />
-            <Talks />
-            <Twitter />
-            <Podcast />
-            <Profile />
+            <main id="main-content">
+              <Greeting />
+              <Skills />
+              <StackProgress />
+              <Education />
+              <WorkExperience />
+              <Projects />
+              <StartupProject />
+              <Achievement />
+              <Blogs />
+              <Talks />
+              <Twitter />
+              <Podcast />
+              <Profile />
+            </main>
             <Footer />
             <ScrollToTopButton />
           </>

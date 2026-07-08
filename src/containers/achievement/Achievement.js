@@ -11,10 +11,10 @@ export default function Achievement() {
   }
   return (
     <Fade bottom duration={1000} distance="20px">
-      <div className="main" id="achievements">
+      <section className="main" id="achievements" aria-label="Achievements and Certifications">
         <div className="achievement-main-div">
           <div className="achievement-header">
-            <h1
+            <h2
               className={
                 isDark
                   ? "dark-mode heading achievement-heading"
@@ -22,7 +22,7 @@ export default function Achievement() {
               }
             >
               {achievementSection.title}
-            </h1>
+            </h2>
             <p
               className={
                 isDark
@@ -51,7 +51,7 @@ export default function Achievement() {
             })}
           </div>
         </div>
-      </div>
+      </section>
     </Fade>
   );
 }
