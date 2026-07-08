@@ -13,3 +13,32 @@
   margin-top: 2rem;
   padding-bottom: 1rem;
 }
+
+.footer-contact {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.footer-link {
+  color: $buttonColor;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.938rem;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: $buttonHover;
+  text-decoration: underline;
+}
+
+.dark-mode.footer-link {
+  color: $buttonHover;
+}
+
+.dark-mode.footer-link:hover {
+  color: $textColorDark;
+}

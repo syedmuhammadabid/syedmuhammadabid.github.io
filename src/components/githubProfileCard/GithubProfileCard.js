@@ -47,14 +47,14 @@ export default function GithubProfileCard({ prof }) {
               </span>
             </div>
             <div>
-              <span className="contact-details">
-                Email: syedmuhammadabid110@gmail.com
-              </span>
+              <a href={`mailto:${contactInfo.email_address}`} className="contact-details contact-link">
+                Email: {contactInfo.email_address}
+              </a>
             </div>
             <div className="opp-div">
-              <span className="contact-details">
-                Phone: +92 321 286 9005
-              </span>
+              <a href={`tel:${contactInfo.number}`} className="contact-details contact-link">
+                Phone: {contactInfo.number}
+              </a>
             </div>
             <SocialMedia />
           </div>

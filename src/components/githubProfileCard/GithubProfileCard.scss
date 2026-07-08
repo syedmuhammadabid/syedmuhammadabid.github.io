@@ -64,6 +64,17 @@
   font-size: 17px;
 }
 
+.contact-link {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.contact-link:hover {
+  opacity: 0.8;
+  color: $buttonColor;
+}
+
 @media (max-width: 768px) {
   .row {
     display: flex;
