@@ -57,16 +57,12 @@
 }
 
 .repo-name {
-  white-space: nowrap;
-  text-overflow: ellipsis;
   color: $githubRepoCardRepoNameColor;
   margin-bottom: 0.75rem;
   font-size: 25px;
   font-weight: 700;
   letter-spacing: -0.5px;
-  overflow: hidden;
   margin: 0px;
-  height: 30px;
 }
 
 .repo-star-svg {
@@ -76,7 +72,7 @@
 .repo-description {
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
