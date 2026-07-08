@@ -35,7 +35,7 @@ export default function ExperienceCard({cardInfo, isDark}) {
       <div style={{background: rgb(colorArrays)}} className="experience-banner">
         <div className="experience-blurred_div"></div>
         <div className="experience-div-company">
-          <h5 className="experience-text-company">{cardInfo.company}</h5>
+          <h3 className="experience-text-company">{cardInfo.company}</h3>
         </div>
 
         <img
@@ -51,7 +51,7 @@ export default function ExperienceCard({cardInfo, isDark}) {
         />
       </div>
       <div className="experience-text-details">
-        <h5
+        <h3
           className={
             isDark
               ? "experience-text-role dark-mode-text"
@@ -59,8 +59,8 @@ export default function ExperienceCard({cardInfo, isDark}) {
           }
         >
           {cardInfo.role}
-        </h5>
-        <h5
+        </h3>
+        <h4
           className={
             isDark
               ? "experience-text-date dark-mode-text"
@@ -68,7 +68,7 @@ export default function ExperienceCard({cardInfo, isDark}) {
           }
         >
           {cardInfo.date}
-        </h5>
+        </h4>
         <p
           className={
             isDark

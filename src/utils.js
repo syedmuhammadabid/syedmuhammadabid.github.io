@@ -1,3 +1,7 @@
+// Use native emoji rendering — no external CDN images needed.
+// Modern browsers render emoji Unicode characters natively.
+export const emoji = (text) => text;
+
 export const formatFileSizeDisplay = value => {
   if (value < 1024) {
     return `${value} KB`;

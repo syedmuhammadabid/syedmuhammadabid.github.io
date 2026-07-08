@@ -34,6 +34,7 @@ export default function SocialMedia() {
           className="icon-button github"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="GitHub"
         >
           <i className="fab fa-github"></i>
           <span></span>
@@ -46,6 +47,7 @@ export default function SocialMedia() {
           className="icon-button linkedin"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="LinkedIn"
         >
           <i className="fab fa-linkedin-in"></i>
           <span></span>
@@ -58,6 +60,7 @@ export default function SocialMedia() {
           className="icon-button google"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Email"
         >
           <i className="fas fa-envelope"></i>
           <span></span>
@@ -70,6 +73,7 @@ export default function SocialMedia() {
           className="icon-button gitlab"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="GitLab"
         >
           <i className="fab fa-gitlab"></i>
           <span></span>
@@ -82,6 +86,7 @@ export default function SocialMedia() {
           className="icon-button facebook"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Facebook"
         >
           <i className="fab fa-facebook-f"></i>
           <span></span>
@@ -94,6 +99,7 @@ export default function SocialMedia() {
           className="icon-button instagram"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Instagram"
         >
           <i className="fab fa-instagram"></i>
           <span></span>
@@ -106,6 +112,7 @@ export default function SocialMedia() {
           className="icon-button twitter"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Twitter"
         >
           <i className="fab fa-twitter"></i>
           <span></span>
@@ -118,6 +125,7 @@ export default function SocialMedia() {
           className="icon-button medium"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Medium"
         >
           <i className="fab fa-medium"></i>
           <span></span>
@@ -130,6 +138,7 @@ export default function SocialMedia() {
           className="icon-button stack-overflow"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Stack Overflow"
         >
           <i className="fab fa-stack-overflow"></i>
           <span></span>
@@ -142,6 +151,7 @@ export default function SocialMedia() {
           className="icon-button kaggle"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Kaggle"
         >
           <i className="fab fa-kaggle"></i>
           <span></span>

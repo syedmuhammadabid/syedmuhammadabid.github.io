@@ -52,15 +52,17 @@ export default function StartupProject() {
                         alt={project.projectName}
                         className="card-image"
                         loading="lazy"
+                        width="300"
+                        height="200"
                       ></img>
                     </div>
                   ) : null}
                   <div className="project-detail">
-                    <h5
+                    <h3
                       className={isDark ? "dark-mode card-title" : "card-title"}
                     >
                       {project.projectName}
-                    </h5>
+                    </h3>
                     <p
                       className={
                         isDark ? "dark-mode card-subtitle" : "card-subtitle"

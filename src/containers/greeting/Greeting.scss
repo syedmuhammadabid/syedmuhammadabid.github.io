@@ -48,6 +48,10 @@
   color: $textColor !important;
 }
 
+.dark-mode .greeting-text {
+  color: $textColorDark !important;
+}
+
 .greeting-text-p {
   font-size: 30px;
   line-height: 40px;

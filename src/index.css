@@ -9,7 +9,16 @@
 @font-face {
   font-family: "Montserrat";
   src: local("Montserrat"),
-    url("./assets/fonts/Montserrat-Regular.ttf") format("woff");
+    url("./assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+/* Force font-display: swap for Font Awesome loaded from CDN */
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-display: swap;
+}
+@font-face {
+  font-family: "Font Awesome 5 Brands";
   font-display: swap;
 }
 code {

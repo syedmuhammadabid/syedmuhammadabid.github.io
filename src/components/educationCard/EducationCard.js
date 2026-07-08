@@ -38,10 +38,10 @@ export default function EducationCard({school}) {
             </div>
           )}
           <div className="education-card-right">
-            <h5 className="education-text-school">{school.schoolName}</h5>
+            <h3 className="education-text-school">{school.schoolName}</h3>
 
             <div className="education-text-details">
-              <h5
+              <h4
                 className={
                   isDark
                     ? "dark-mode education-text-subHeader"
@@ -49,7 +49,7 @@ export default function EducationCard({school}) {
                 }
               >
                 {school.subHeader}
-              </h5>
+              </h4>
               <p
                 className={`${
                   isDark ? "dark-mode" : ""

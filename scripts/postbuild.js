@@ -33,8 +33,23 @@ if (!chromePath) {
 
 console.log(`✅ Using Chrome at: ${chromePath}`);
 
-execSync("npx react-snap", {
-  stdio: "inherit",
-  cwd: path.resolve(__dirname, ".."),
-  env: {...process.env, PUPPETEER_EXECUTABLE_PATH: chromePath},
-});
+try {
+  execSync("npx react-snap", {
+    stdio: ["inherit", "inherit", "pipe"],
+    cwd: path.resolve(__dirname, ".."),
+    env: {...process.env, PUPPETEER_EXECUTABLE_PATH: chromePath},
+  });
+} catch (e) {
+  // react-snap on Windows emits harmless "could not be terminated" errors
+  // when Chrome child processes exit before Puppeteer's cleanup runs.
+  const stderr = e.stderr ? e.stderr.toString() : "";
+  const isOnlyCleanupNoise = stderr
+    .split("\n")
+    .filter((line) => line.trim())
+    .every((line) => line.includes("could not be terminated"));
+
+  if (!isOnlyCleanupNoise) {
+    console.error(stderr);
+    process.exit(1);
+  }
+}
