@@ -3,7 +3,7 @@ import {emoji} from "../../utils";
 import "./Greeting.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
-import {illustration, greeting} from "../../portfolio";
+import {illustration, greeting} from "../../portfolioCore";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Greeting() {

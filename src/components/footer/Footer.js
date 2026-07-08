@@ -3,7 +3,6 @@ import "./Footer.scss";
 import { Fade } from "react-reveal";
 import { emoji } from "../../utils";
 import StyleContext from "../../contexts/StyleContext";
-import { contactInfo } from "../../portfolio";
 
 export default function Footer() {
   const { isDark } = useContext(StyleContext);

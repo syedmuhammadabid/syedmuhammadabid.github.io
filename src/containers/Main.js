@@ -1,19 +1,16 @@
 import React, {useEffect, useState, lazy, Suspense} from "react";
 import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
-import Skills from "./skills/Skills";
-import StackProgress from "./skillProgress/skillProgress";
-import Footer from "../components/footer/Footer";
-import Education from "./education/Education";
-import ScrollToTopButton from "./topbutton/Top";
-import SplashScreen from "./splashScreen/SplashScreen";
-import {splashScreen} from "../portfolio";
+import {splashScreen} from "../portfolioCore";
 import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
 import {observeSections} from "../analytics";
 import "./Main.scss";
 
-// Lazy-load below-the-fold sections
+// Lazy-load all below-the-fold sections
+const Skills = lazy(() => import("./skills/Skills"));
+const StackProgress = lazy(() => import("./skillProgress/skillProgress"));
+const Education = lazy(() => import("./education/Education"));
 const WorkExperience = lazy(() => import("./workExperience/WorkExperience"));
 const Projects = lazy(() => import("./projects/Projects"));
 const StartupProject = lazy(() => import("./StartupProjects/StartupProject"));
@@ -23,6 +20,8 @@ const Talks = lazy(() => import("./talks/Talks"));
 const Twitter = lazy(() => import("./twitter-embed/twitter"));
 const Podcast = lazy(() => import("./podcast/Podcast"));
 const Profile = lazy(() => import("./profile/Profile"));
+const Footer = lazy(() => import("../components/footer/Footer"));
+const ScrollToTopButton = lazy(() => import("./topbutton/Top"));
 
 const SECTION_IDS = [
   "greeting",
@@ -71,16 +70,16 @@ const Main = () => {
     <div className={isDark ? "dark-mode" : null}>
       <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
         {isShowingSplashAnimation && splashScreen.enabled ? (
-          <SplashScreen />
+          null
         ) : (
           <>
             <Header />
             <main id="main-content">
               <Greeting />
-              <Skills />
-              <StackProgress />
-              <Education />
-              <Suspense fallback={<div style={{minHeight: "200px"}} />}>
+              <Suspense fallback={null}>
+                <Skills />
+                <StackProgress />
+                <Education />
                 <WorkExperience />
                 <Projects />
                 <StartupProject />
@@ -92,8 +91,10 @@ const Main = () => {
                 <Profile />
               </Suspense>
             </main>
-            <Footer />
-            <ScrollToTopButton />
+            <Suspense fallback={null}>
+              <Footer />
+              <ScrollToTopButton />
+            </Suspense>
           </>
         )}
       </StyleProvider>

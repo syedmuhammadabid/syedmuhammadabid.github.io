@@ -5,12 +5,20 @@
   src: local("Agustina Regular"),
     url("./assets/fonts/Agustina.woff") format("woff");
   font-display: swap;
+  size-adjust: 100%;
+  ascent-override: 90%;
+  descent-override: 20%;
+  line-gap-override: 0%;
 }
 @font-face {
   font-family: "Montserrat";
   src: local("Montserrat"),
     url("./assets/fonts/Montserrat-Regular.ttf") format("truetype");
   font-display: swap;
+  size-adjust: 113%;
+  ascent-override: 80%;
+  descent-override: 20%;
+  line-gap-override: 0%;
 }
 /* Force font-display: swap for Font Awesome loaded from CDN */
 @font-face {

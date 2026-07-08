@@ -65,7 +65,28 @@
     <!-- Font Awesome loaded async (non-render-blocking) -->
     <link rel="preload" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.4/css/all.min.css"></noscript>
-    <style>@font-face{font-display:swap!important}</style>
+
+    <!-- Critical CSS inlined for instant FCP from pre-rendered HTML -->
+    <style>
+      *{box-sizing:border-box}
+      body{margin:0;font:16px/1.6 -apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;background:#fff;color:#1a1a2e}
+      #root{min-height:100vh}
+      .headroom-wrapper{position:sticky;top:0;z-index:10}
+      .header{background:#fff;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+      .logo{text-decoration:none;font-size:1.3rem}
+      .logo-name{font-weight:700;color:#1a1a2e}
+      .grey-color{color:#868e96}
+      .greet-main{padding:40px 7% 20px}
+      .greeting-main{display:flex;width:100%;align-items:center}
+      .greeting-text-div{flex:1;padding-right:2rem}
+      .greeting-text{font-size:50px;line-height:1.1;color:#1a1a2e;font-weight:700;margin:0 0 16px}
+      .greeting-text-p,.subTitle{font-size:18px;line-height:1.6;color:#64748b;margin:0 0 16px}
+      .greeting-image-div{flex:1;min-height:400px;display:flex;align-items:center;justify-content:center}
+      .wave-emoji{display:inline-block;animation:wave 1.8s infinite;transform-origin:70% 70%}
+      @keyframes wave{0%,60%,100%{transform:rotate(0)}10%{transform:rotate(-10deg)}20%{transform:rotate(12deg)}30%{transform:rotate(-10deg)}40%{transform:rotate(9deg)}}
+      @media(max-width:768px){.greeting-main{display:block}.greeting-text-div{padding-right:0}.greeting-text{font-size:30px;text-align:center}.greeting-text-p{font-size:15px;text-align:center}.greeting-image-div{height:256px;min-height:unset}.greet-main{padding:20px 5% 10px}}
+      @font-face{font-display:swap!important}
+    </style>
 
     <!-- Google Tag Manager (deferred until idle) -->
     <script>var l=function(){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -94,23 +115,34 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <div id="root">
-      <!-- Pre-render fallback for SEO crawlers -->
-      <header style="max-width:800px;margin:0 auto;padding:2rem;font-family:sans-serif">
-        <h1>Syed Muhammad Abid</h1>
-        <h2>Senior Full-Stack Software Engineer</h2>
-        <p>Senior Full-Stack Software Engineer and React.js developer with 7+ years of experience building enterprise-scale web applications. Also an experienced Node.js engineer, Ruby on Rails developer, and AWS cloud engineer specializing in TypeScript, PostgreSQL, and cloud-native architecture (ECS Fargate, RDS, Docker, Kubernetes, Terraform, GitLab CI/CD).</p>
-        <p>Key achievements include reducing Webpack build times by 62%, leading a Rails 5→7 migration eliminating 14+ CVEs with zero downtime, engineering ACID-critical financial transaction systems, and building concurrent high-traffic booking systems at Daraz (Alibaba Group).</p>
-        <p>Currently working with Atex Software (Finland) and Contour Software. Remote software engineer available for roles in Europe, North America, and the Gulf region (UAE).</p>
-        <p>Education: MS in Data Science from NED University (ML, NLP, Generative AI).</p>
-        <p>Also runs <a href="https://intelicoder.com">InteliCoder</a> — a software development agency.</p>
-        <nav>
-          <a href="https://linkedin.com/in/syedmuhammadabid">LinkedIn</a> |
-          <a href="https://github.com/syedmuhammadabid">GitHub</a>
-        </nav>
-      </header>
+      <!-- Pre-rendered content matching React Greeting layout for zero CLS -->
+      <div>
+        <div class="headroom-wrapper">
+          <header class="header">
+            <a href="/" class="logo">
+              <span class="grey-color"> &lt;</span>
+              <span class="logo-name">S. M. Abid</span>
+              <span class="grey-color">/&gt;</span>
+            </a>
+          </header>
+        </div>
+        <main id="main-content">
+          <section class="greet-main" id="greeting">
+            <div class="greeting-main">
+              <div class="greeting-text-div">
+                <div>
+                  <h1 class="greeting-text">Hi, I'm Syed Muhammad Abid <span class="wave-emoji">👋</span></h1>
+                  <p class="greeting-text-p subTitle">A Senior Full-Stack Software Engineer 🚀 with 7+ years building enterprise-scale web applications. React.js developer, Node.js engineer, and Ruby on Rails developer specializing in AWS cloud architecture. Remote software engineer available across Europe, North America, and UAE.</p>
+                </div>
+              </div>
+              <div class="greeting-image-div"></div>
+            </div>
+          </section>
+        </main>
+      </div>
     </div>
     <noscript>
-      <style>#root header{display:block}</style>
+      <style>#root{display:block}</style>
     </noscript>
     <!--
       This HTML file is a template.

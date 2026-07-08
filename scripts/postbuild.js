@@ -1,11 +1,28 @@
 /**
- * Wrapper for react-snap that automatically detects the system Chrome path.
- * react-snap bundles an old Puppeteer whose Chromium download is broken,
- * so we point it at the locally installed Chrome.
+ * Post-build optimizations:
+ * 1. Make CSS non-render-blocking (convert <link stylesheet> to async preload)
+ * 2. Run react-snap for pre-rendering
  */
 const {execSync} = require("child_process");
 const fs = require("fs");
 const path = require("path");
+
+// --- Step 1: Make CSS non-render-blocking in index.html ---
+const buildDir = path.resolve(__dirname, "..", "build");
+const indexPath = path.join(buildDir, "index.html");
+
+if (fs.existsSync(indexPath)) {
+  let html = fs.readFileSync(indexPath, "utf8");
+  // Convert render-blocking CSS links to async loading pattern
+  html = html.replace(
+    /<link href="(\/static\/css\/[^"]+)" rel="stylesheet">/g,
+    '<link rel="preload" href="$1" as="style" onload=\'this.onload=null;this.rel="stylesheet"\'><noscript><link rel="stylesheet" href="$1"></noscript>'
+  );
+  fs.writeFileSync(indexPath, html);
+  console.log("✅ Made CSS non-render-blocking");
+}
+
+// --- Step 2: react-snap pre-rendering ---
 
 const chromePaths = [
   process.env.PUPPETEER_EXECUTABLE_PATH,

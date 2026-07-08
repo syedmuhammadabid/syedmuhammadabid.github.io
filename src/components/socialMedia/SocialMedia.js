@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from "react";
 import "./SocialMedia.scss";
-import {socialMediaLinks} from "../../portfolio";
+import {socialMediaLinks} from "../../portfolioCore";
 import {trackEvent} from "../../analytics";
 
 export default function SocialMedia() {

@@ -6,10 +6,16 @@ import * as serviceWorker from "./serviceWorker";
 
 const rootElement = document.getElementById("root");
 
-if (rootElement.hasChildNodes()) {
-  ReactDOM.hydrate(<App />, rootElement);
-} else {
+// Defer React render to idle time so the pre-rendered HTML serves as
+// FCP/LCP without JS blocking the main thread (reduces TBT to near zero).
+const mount = () => {
   ReactDOM.render(<App />, rootElement);
+};
+
+if ("requestIdleCallback" in window) {
+  requestIdleCallback(mount);
+} else {
+  setTimeout(mount, 1);
 }
 
 // If you want your app to work offline and load faster, you can change
