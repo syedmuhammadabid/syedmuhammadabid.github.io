@@ -2,27 +2,40 @@
 
 .main-button {
   background-color: $buttonColor;
-  border: solid 1px $buttonColor;
+  border: solid 2px $buttonColor;
   color: $textColorDark;
-  font-weight: 700;
+  font-weight: 600;
   width: max-content;
-  padding: 13px 22px;
-  margin-right: 50px;
-  text-transform: uppercase;
-  border-radius: 6px;
+  padding: 14px 28px;
+  margin-right: 0px;
+  text-transform: none;
+  border-radius: 10px;
   text-align: center;
   text-decoration: none;
-  display: block;
-  margin-top: 20px;
-  font-size: 1rem;
+  display: inline-block;
+  margin-top: 0px;
+  font-size: 0.938rem;
+  letter-spacing: 0.01em;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  box-shadow: 0 4px 14px rgba(108, 60, 224, 0.25);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .main-button:hover {
-  background-color: $darkBoxShadow2;
+  background-color: $buttonHover;
+  color: $textColorDark;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(108, 60, 224, 0.35);
+}
+.download-link-button {
+  background-color: transparent;
+  border: solid 2px $buttonColor;
   color: $buttonColor;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  transform: translateY(-3px);
+  box-shadow: none;
+}
+.download-link-button:hover {
+  background-color: $buttonColor;
+  color: $textColorDark;
+  box-shadow: 0 4px 14px rgba(108, 60, 224, 0.25);
 }
 .project-button {
   display: flex;
@@ -35,13 +48,13 @@
 /* Media Query */
 @media (max-width: 768px) {
   .main-button {
-    font-size: 0.938rem;
-    padding: 12px 18px;
-    margin-right: 0px;
+    font-size: 0.875rem;
+    padding: 12px 24px;
   }
 }
 @media (max-width: 320px) {
   .main-button {
-    font-size: 0.75rem;
+    font-size: 0.813rem;
+    padding: 10px 20px;
   }
 }

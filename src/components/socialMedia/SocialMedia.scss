@@ -2,6 +2,7 @@
 
 .social-media-div {
   font-size: 2em;
+  margin-top: 8px;
 }
 
 .icon-button {
@@ -10,22 +11,23 @@
 
 .icon-button i {
   color: $textColorDark;
-  border-radius: 2.6rem;
+  border-radius: 50%;
   cursor: pointer;
   display: inline-block;
-  font-size: 1.3rem;
-  height: 2.6rem;
-  line-height: 2.6rem;
-  margin: 0 5px;
+  font-size: 1.2rem;
+  height: 2.8rem;
+  line-height: 2.8rem;
+  margin: 0 6px;
   position: relative;
   text-align: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 2.6rem;
+  width: 2.8rem;
   margin-bottom: 10px;
-  transition: background-color 0.2s ease-in, transform 0.2s ease-in;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.2s ease-in, transform 0.2s ease-in, box-shadow 0.2s ease-in;
 }
 
 .facebook i {
@@ -79,7 +81,8 @@
 .stack-overflow i:hover,
 .kaggle i:hover,
 .medium i:hover {
-  background-color: $textColor;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
 }
 
 /* Media Query */
