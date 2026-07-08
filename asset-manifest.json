@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.6265afc2.css",
-    "main.js": "/static/js/main.7b3f5523.js",
+    "main.js": "/static/js/main.eef0716a.js",
     "static/css/84.53271af9.chunk.css": "/static/css/84.53271af9.chunk.css",
     "static/js/84.751f9c99.chunk.js": "/static/js/84.751f9c99.chunk.js",
     "static/css/26.82c26ef9.chunk.css": "/static/css/26.82c26ef9.chunk.css",
@@ -52,12 +52,12 @@
     "static/media/darazLogo.png": "/static/media/darazLogo.d35a2d83f513faf46fe3.png",
     "static/media/jsFramework.svg": "/static/media/jsFramework.6f29b1988f86d14c7845c48d3b7c0a99.svg",
     "static/media/nedLogo.png": "/static/media/nedLogo.35c4e1b328d30101b5a7.png",
+    "index.html": "/index.html",
     "static/media/skill.svg": "/static/media/skill.35a147662ab0a1d15e579690446e0258.svg",
     "static/media/atexLogo.svg": "/static/media/atexLogo.04db337cfc6488118bfdedfd2c2b6176.svg",
-    "index.html": "/index.html",
     "static/media/talksCardBack.svg": "/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
     "main.6265afc2.css.map": "/static/css/main.6265afc2.css.map",
-    "main.7b3f5523.js.map": "/static/js/main.7b3f5523.js.map",
+    "main.eef0716a.js.map": "/static/js/main.eef0716a.js.map",
     "84.53271af9.chunk.css.map": "/static/css/84.53271af9.chunk.css.map",
     "84.751f9c99.chunk.js.map": "/static/js/84.751f9c99.chunk.js.map",
     "26.82c26ef9.chunk.css.map": "/static/css/26.82c26ef9.chunk.css.map",
@@ -97,6 +97,6 @@
   },
   "entrypoints": [
     "static/css/main.6265afc2.css",
-    "static/js/main.7b3f5523.js"
+    "static/js/main.eef0716a.js"
   ]
 }
