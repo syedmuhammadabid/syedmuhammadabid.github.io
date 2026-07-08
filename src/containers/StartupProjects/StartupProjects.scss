@@ -28,16 +28,16 @@
 }
 .project-card-light {
   box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: box-shadow 0.3s ease, transform 0.3s ease;
+  -o-transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .project-card-dark {
   box-shadow: 0px 10px 30px -15px $darkBoxShadow;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.25s ease;
+  -webkit-transition: box-shadow 0.25s ease, transform 0.25s ease;
+  -o-transition: box-shadow 0.25s ease, transform 0.25s ease;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .project-detail {
@@ -79,7 +79,7 @@
   margin: 0 0.5rem 0.5rem 0;
   padding: 0 0.75em;
   cursor: pointer;
-  transition: 0.2s ease-in;
+  transition: background-color 0.2s ease-in;
 }
 
 @media (max-width: 768px) {

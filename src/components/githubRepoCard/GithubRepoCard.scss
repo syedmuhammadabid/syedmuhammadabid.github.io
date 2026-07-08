@@ -6,9 +6,9 @@
   box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
   padding: 2rem;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  -o-transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
 }
 .repo-card-div:hover {
   box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
