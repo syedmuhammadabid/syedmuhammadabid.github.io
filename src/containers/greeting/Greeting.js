@@ -76,7 +76,8 @@ export default function Greeting() {
               src={require("../../assets/images/manOnTable.svg")}
               width="400"
               height="400"
-              loading="lazy"
+              loading="eager"
+              decoding="async"
             ></img>
           )}
         </div>

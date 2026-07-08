@@ -10,7 +10,10 @@ const splashScreen = {
 };
 
 const illustration = {
-  animated: true
+  // Static SVG hero instead of Lottie: avoids loading/parsing the lottie-react
+  // library and a large animation JSON, and stops the continuous main-thread
+  // animation work — the biggest contributor to Total Blocking Time.
+  animated: false
 };
 
 const greeting = {
