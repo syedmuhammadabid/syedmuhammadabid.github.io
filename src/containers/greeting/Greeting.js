@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-import {Fade} from "react-reveal";
 import {emoji} from "../../utils";
 import "./Greeting.scss";
 import landingPerson from "../../assets/lottie/landingPerson";
@@ -15,58 +14,56 @@ export default function Greeting() {
     return null;
   }
   return (
-    <Fade bottom duration={1000} distance="40px">
-      <section className="greet-main" id="greeting" aria-label="Introduction">
-        <div className="greeting-main">
-          <div className="greeting-text-div">
-            <div>
-              <h1
-                className={isDark ? "dark-mode greeting-text" : "greeting-text"}
-              >
-                {" "}
-                {greeting.title}{" "}
-                <span className="wave-emoji">{emoji("👋")}</span>
-              </h1>
-              <p
-                className={
-                  isDark
-                    ? "dark-mode greeting-text-p"
-                    : "greeting-text-p subTitle"
-                }
-              >
-                {greeting.subTitle}
-              </p>
-              <div id="resume" className="empty-div"></div>
-              <SocialMedia />
-              <div className="button-greeting-div">
-                <Button text="Contact me" href="#contact" />
-                {greeting.resumeLink && (
-                  <a
-                    href={require("./resume.pdf")}
-                    download="Resume.pdf"
-                    className="main-button download-link-button"
-                  >
-                    Download my resume
-                  </a>
-                )}
-              </div>
+    <section className="greet-main" id="greeting" aria-label="Introduction">
+      <div className="greeting-main">
+        <div className="greeting-text-div">
+          <div>
+            <h1
+              className={isDark ? "dark-mode greeting-text" : "greeting-text"}
+            >
+              {" "}
+              {greeting.title}{" "}
+              <span className="wave-emoji">{emoji("👋")}</span>
+            </h1>
+            <p
+              className={
+                isDark
+                  ? "dark-mode greeting-text-p"
+                  : "greeting-text-p subTitle"
+              }
+            >
+              {greeting.subTitle}
+            </p>
+            <div id="resume" className="empty-div"></div>
+            <SocialMedia />
+            <div className="button-greeting-div">
+              <Button text="Contact me" href="#contact" />
+              {greeting.resumeLink && (
+                <a
+                  href={require("./resume.pdf")}
+                  download="Resume.pdf"
+                  className="main-button download-link-button"
+                >
+                  Download my resume
+                </a>
+              )}
             </div>
           </div>
-          <div className="greeting-image-div">
-            {illustration.animated ? (
-              <DisplayLottie animationData={landingPerson} />
-            ) : (
-              <img
-                alt="Syed Muhammad Abid — Senior Full-Stack Software Engineer working at desk"
-                src={require("../../assets/images/manOnTable.svg")}
-                width="400"
-                height="400"
-                loading="lazy"
-              ></img>
-            )}
-          </div>
         </div>
-      </section>
-    </Fade>
+        <div className="greeting-image-div">
+          {illustration.animated ? (
+            <DisplayLottie animationData={landingPerson} />
+          ) : (
+            <img
+              alt="Syed Muhammad Abid — Senior Full-Stack Software Engineer working at desk"
+              src={require("../../assets/images/manOnTable.svg")}
+              width="400"
+              height="400"
+              loading="lazy"
+            ></img>
+          )}
+        </div>
+      </div>
+    </section>
   );
 }
