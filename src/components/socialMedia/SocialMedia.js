@@ -17,7 +17,10 @@ export default function SocialMedia() {
         return;
       }
       const platform = link.className.replace("icon-button", "").trim();
-      trackEvent("social_click", {social_platform: platform, link_url: link.href});
+      trackEvent("social_click", {
+        social_platform: platform,
+        link_url: link.href
+      });
     };
     container.addEventListener("click", handleClick);
     return () => container.removeEventListener("click", handleClick);

@@ -9,7 +9,9 @@ export default function Button({text, className, href, newTab}) {
         className="main-button"
         href={href}
         target={newTab && "_blank"}
-        onClick={() => trackEvent("button_click", {button_text: text, link_url: href})}
+        onClick={() =>
+          trackEvent("button_click", {button_text: text, link_url: href})
+        }
       >
         {text}
       </a>
