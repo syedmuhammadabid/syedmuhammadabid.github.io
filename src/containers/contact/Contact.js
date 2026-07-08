@@ -1,14 +1,27 @@
-import React, {useContext} from "react";
+import React, {useContext, useState, useEffect} from "react";
 import "./Contact.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import {illustration, contactInfo} from "../../portfolio";
 import {Fade} from "react-reveal";
-import email from "../../assets/lottie/email";
-import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Contact() {
   const {isDark} = useContext(StyleContext);
+  const [LottieComponent, setLottieComponent] = useState(null);
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    if (illustration.animated) {
+      Promise.all([
+        import("../../components/displayLottie/DisplayLottie"),
+        import("../../assets/lottie/email")
+      ]).then(([mod, data]) => {
+        setLottieComponent(() => mod.default);
+        setAnimationData(data.default);
+      });
+    }
+  }, []);
+
   return (
     <Fade bottom duration={1000} distance="20px">
       <section className="main contact-margin-top" id="contact" aria-label="Contact">
@@ -54,7 +67,11 @@ export default function Contact() {
           </div>
           <div className="contact-image-div">
             {illustration.animated ? (
-              <DisplayLottie animationData={email} />
+              LottieComponent && animationData ? (
+                <LottieComponent animationData={animationData} />
+              ) : (
+                <div style={{width: "100%", height: "400px"}} />
+              )
             ) : (
               <img
                 alt="Contact Syed Muhammad Abid — remote software engineer available for hire"

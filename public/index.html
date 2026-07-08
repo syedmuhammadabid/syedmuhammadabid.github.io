@@ -61,24 +61,19 @@
 
     <!-- Preconnect to critical origins -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
-
-    <!-- Preload critical fonts to eliminate render delay -->
-    <link rel="preload" href="/static/media/Montserrat-Regular.3cd7866c6a8f1ed664f4.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="/static/media/Agustina.eb0c59d09b26e74578c1.woff" as="font" type="font/woff" crossorigin>
 
     <!-- Font Awesome loaded async (non-render-blocking) -->
     <link rel="preload" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.4/css/all.min.css"></noscript>
     <style>@font-face{font-display:swap!important}</style>
 
-    <!-- Google Tag Manager (deferred) -->
-    <script>window.addEventListener('load',function(){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <!-- Google Tag Manager (deferred until idle) -->
+    <script>var l=function(){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W49V2R3W');});</script>
+    })(window,document,'script','dataLayer','GTM-W49V2R3W');};
+    'requestIdleCallback' in window?requestIdleCallback(l):setTimeout(l,3500);</script>
     <!-- End Google Tag Manager -->
 
 

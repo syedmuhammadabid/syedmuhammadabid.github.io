@@ -1,8 +1,11 @@
-import React from "react";
-import Lottie from "lottie-react";
+import React, {lazy, Suspense} from "react";
+
+const Lottie = lazy(() => import("lottie-react"));
 
 export default function DisplayLottie({animationData}) {
   return (
-    <Lottie animationData={animationData} loop={true} />
+    <Suspense fallback={<div style={{width: "100%", height: "400px"}} />}>
+      <Lottie animationData={animationData} loop={true} />
+    </Suspense>
   );
 }

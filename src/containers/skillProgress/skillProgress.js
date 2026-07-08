@@ -1,11 +1,24 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./Progress.scss";
 import {illustration, techStack} from "../../portfolio";
 import {Fade} from "react-reveal";
-import Build from "../../assets/lottie/build";
-import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 
 export default function StackProgress() {
+  const [LottieComponent, setLottieComponent] = useState(null);
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    if (illustration.animated && techStack.viewSkillBars) {
+      Promise.all([
+        import("../../components/displayLottie/DisplayLottie"),
+        import("../../assets/lottie/build")
+      ]).then(([mod, data]) => {
+        setLottieComponent(() => mod.default);
+        setAnimationData(data.default);
+      });
+    }
+  }, []);
+
   if (techStack.viewSkillBars) {
     return (
       <Fade bottom duration={1000} distance="20px">
@@ -29,7 +42,11 @@ export default function StackProgress() {
 
           <div className="skills-image">
             {illustration.animated ? (
-              <DisplayLottie animationData={Build} />
+              LottieComponent && animationData ? (
+                <LottieComponent animationData={animationData} />
+              ) : (
+                <div style={{width: "100%", height: "400px"}} />
+              )
             ) : (
               <img
                 alt="Skills"

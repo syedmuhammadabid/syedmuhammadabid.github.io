@@ -1,14 +1,27 @@
-import React, {useContext} from "react";
+import React, {useContext, useState, useEffect} from "react";
 import "./Skills.scss";
 import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
 import {illustration, skillsSection} from "../../portfolio";
 import {Fade} from "react-reveal";
-import codingPerson from "../../assets/lottie/codingPerson";
-import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Skills() {
   const {isDark} = useContext(StyleContext);
+  const [LottieComponent, setLottieComponent] = useState(null);
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    if (illustration.animated && skillsSection.display) {
+      Promise.all([
+        import("../../components/displayLottie/DisplayLottie"),
+        import("../../assets/lottie/codingPerson")
+      ]).then(([mod, data]) => {
+        setLottieComponent(() => mod.default);
+        setAnimationData(data.default);
+      });
+    }
+  }, []);
+
   if (!skillsSection.display) {
     return null;
   }
@@ -18,7 +31,11 @@ export default function Skills() {
         <Fade left duration={1000}>
           <div className="skills-image-div">
             {illustration.animated ? (
-              <DisplayLottie animationData={codingPerson} />
+              LottieComponent && animationData ? (
+                <LottieComponent animationData={animationData} />
+              ) : (
+                <div style={{width: "100%", height: "400px"}} />
+              )
             ) : (
               <img
                 alt="Software engineer writing code with React.js and Node.js"

@@ -1,8 +1,6 @@
-import React, {useContext} from "react";
+import React, {useContext, useState, useEffect} from "react";
 import {emoji} from "../../utils";
 import "./Greeting.scss";
-import landingPerson from "../../assets/lottie/landingPerson";
-import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 import {illustration, greeting} from "../../portfolio";
@@ -10,6 +8,21 @@ import StyleContext from "../../contexts/StyleContext";
 
 export default function Greeting() {
   const {isDark} = useContext(StyleContext);
+  const [LottieComponent, setLottieComponent] = useState(null);
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    if (illustration.animated) {
+      Promise.all([
+        import("../../components/displayLottie/DisplayLottie"),
+        import("../../assets/lottie/landingPerson")
+      ]).then(([mod, data]) => {
+        setLottieComponent(() => mod.default);
+        setAnimationData(data.default);
+      });
+    }
+  }, []);
+
   if (!greeting.displayGreeting) {
     return null;
   }
@@ -52,7 +65,11 @@ export default function Greeting() {
         </div>
         <div className="greeting-image-div">
           {illustration.animated ? (
-            <DisplayLottie animationData={landingPerson} />
+            LottieComponent && animationData ? (
+              <LottieComponent animationData={animationData} />
+            ) : (
+              <div style={{width: "100%", height: "400px"}} />
+            )
           ) : (
             <img
               alt="Syed Muhammad Abid — Senior Full-Stack Software Engineer working at desk"

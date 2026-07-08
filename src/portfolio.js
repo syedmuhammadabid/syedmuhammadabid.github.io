@@ -3,13 +3,12 @@
 // To change portfolio colors globally go to the  _globalColor.scss file
 
 import {emoji} from "./utils";
-import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
 
 // Splash Screen
 
 const splashScreen = {
   enabled: false, // disabled for LCP performance — splash delays real content
-  animation: splashAnimation,
+  animation: null, // loaded dynamically if enabled
   duration: 800
 };
 
