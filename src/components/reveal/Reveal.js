@@ -36,10 +36,10 @@ export function Fade({
   const translate = bottom
     ? `translateY(${distance})`
     : left
-      ? `translateX(-${distance})`
-      : right
-        ? `translateX(${distance})`
-        : `translateY(${distance})`;
+    ? `translateX(-${distance})`
+    : right
+    ? `translateX(${distance})`
+    : `translateY(${distance})`;
 
   const style = {
     transition: `opacity ${duration}ms ease-out, transform ${duration}ms ease-out`,
