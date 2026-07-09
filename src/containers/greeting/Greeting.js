@@ -24,8 +24,7 @@ export default function Greeting() {
               className={isDark ? "dark-mode greeting-text" : "greeting-text"}
             >
               {" "}
-              {greeting.title}{" "}
-              <span className="wave-emoji">{emoji("👋")}</span>
+              {greeting.title} <span className="wave-emoji">{emoji("👋")}</span>
             </h1>
             <p
               className={
@@ -58,10 +57,7 @@ export default function Greeting() {
           {illustration.animated ? (
             <DisplayLottie animationData={landingPerson} />
           ) : (
-            <img
-              alt="man sitting on table"
-              src={manOnTable}
-            ></img>
+            <img alt="man sitting on table" src={manOnTable}></img>
           )}
         </div>
       </div>

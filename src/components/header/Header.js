@@ -38,61 +38,79 @@ function Header() {
             <span className="logo-name">{greeting.username}</span>
             <span className="grey-color">/&gt;</span>
           </a>
-        <input className="menu-btn" type="checkbox" id="menu-btn" />
-        <label
-          className="menu-icon"
-          htmlFor="menu-btn"
-          style={{color: "white"}}
-        >
-          <span className={isDark ? "navicon navicon-dark" : "navicon"}></span>
-        </label>
-        <ul className={isDark ? "dark-menu menu" : "menu"}>
-          {viewSkills && (
+          <input className="menu-btn" type="checkbox" id="menu-btn" />
+          <label
+            className="menu-icon"
+            htmlFor="menu-btn"
+            style={{color: "white"}}
+          >
+            <span
+              className={isDark ? "navicon navicon-dark" : "navicon"}
+            ></span>
+          </label>
+          <ul className={isDark ? "dark-menu menu" : "menu"}>
+            {viewSkills && (
+              <li>
+                <a href="#skills" onClick={closeMobileMenu}>
+                  Skills
+                </a>
+              </li>
+            )}
+            {viewExperience && (
+              <li>
+                <a href="#experience" onClick={closeMobileMenu}>
+                  Work Experiences
+                </a>
+              </li>
+            )}
+            {viewOpenSource && (
+              <li>
+                <a href="#opensource" onClick={closeMobileMenu}>
+                  Open Source
+                </a>
+              </li>
+            )}
+            {viewAchievement && (
+              <li>
+                <a href="#achievements" onClick={closeMobileMenu}>
+                  Achievements
+                </a>
+              </li>
+            )}
+            {viewBlog && (
+              <li>
+                <a href="#blogs" onClick={closeMobileMenu}>
+                  Blogs
+                </a>
+              </li>
+            )}
+            {viewTalks && (
+              <li>
+                <a href="#talks" onClick={closeMobileMenu}>
+                  Talks
+                </a>
+              </li>
+            )}
+            {viewResume && (
+              <li>
+                <a href="#resume" onClick={closeMobileMenu}>
+                  Resume
+                </a>
+              </li>
+            )}
             <li>
-              <a href="#skills" onClick={closeMobileMenu}>Skills</a>
+              <a href="#contact" onClick={closeMobileMenu}>
+                Contact Me
+              </a>
             </li>
-          )}
-          {viewExperience && (
             <li>
-              <a href="#experience" onClick={closeMobileMenu}>Work Experiences</a>
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+              <a>
+                <ToggleSwitch />
+              </a>
             </li>
-          )}
-          {viewOpenSource && (
-            <li>
-              <a href="#opensource" onClick={closeMobileMenu}>Open Source</a>
-            </li>
-          )}
-          {viewAchievement && (
-            <li>
-              <a href="#achievements" onClick={closeMobileMenu}>Achievements</a>
-            </li>
-          )}
-          {viewBlog && (
-            <li>
-              <a href="#blogs" onClick={closeMobileMenu}>Blogs</a>
-            </li>
-          )}
-          {viewTalks && (
-            <li>
-              <a href="#talks" onClick={closeMobileMenu}>Talks</a>
-            </li>
-          )}
-          {viewResume && (
-            <li>
-              <a href="#resume" onClick={closeMobileMenu}>Resume</a>
-            </li>
-          )}
-          <li>
-            <a href="#contact" onClick={closeMobileMenu}>Contact Me</a>
-          </li>
-          <li>
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a>
-              <ToggleSwitch />
-            </a>
-          </li>
-        </ul>
-      </header>
+          </ul>
+        </header>
       </nav>
     </Headroom>
   );

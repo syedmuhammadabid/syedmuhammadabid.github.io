@@ -32,11 +32,7 @@ export default function StackProgress() {
             {illustration.animated ? (
               <DisplayLottie animationData={Build} />
             ) : (
-              <img
-                alt="Skills"
-                src={skillImg}
-                loading="lazy"
-              />
+              <img alt="Skills" src={skillImg} loading="lazy" />
             )}
           </div>
         </div>

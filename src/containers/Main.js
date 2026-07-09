@@ -78,21 +78,21 @@ const Main = () => {
           <>
             <Header />
             <main>
-            <Greeting />
-            <Suspense fallback={<div style={{minHeight: "100vh"}} />}>
-              <Skills />
-              <StackProgress />
-              <Education />
-              <WorkExperience />
-              <Projects />
-              <StartupProject />
-              <Achievement />
-              <Blogs />
-              <Talks />
-              <Twitter />
-              <Podcast />
-              <Profile />
-            </Suspense>
+              <Greeting />
+              <Suspense fallback={<div style={{minHeight: "100vh"}} />}>
+                <Skills />
+                <StackProgress />
+                <Education />
+                <WorkExperience />
+                <Projects />
+                <StartupProject />
+                <Achievement />
+                <Blogs />
+                <Talks />
+                <Twitter />
+                <Podcast />
+                <Profile />
+              </Suspense>
             </main>
             <Suspense fallback={null}>
               <Footer />
