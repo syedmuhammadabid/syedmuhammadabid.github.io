@@ -1,26 +1,28 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, lazy, Suspense} from "react";
 import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
-import Skills from "./skills/Skills";
-import StackProgress from "./skillProgress/skillProgress";
-import WorkExperience from "./workExperience/WorkExperience";
-import Projects from "./projects/Projects";
-import StartupProject from "./StartupProjects/StartupProject";
-import Achievement from "./achievement/Achievement";
-import Blogs from "./blogs/Blogs";
-import Footer from "../components/footer/Footer";
-import Talks from "./talks/Talks";
-import Podcast from "./podcast/Podcast";
-import Education from "./education/Education";
-import ScrollToTopButton from "./topbutton/Top";
-import Twitter from "./twitter-embed/twitter";
-import Profile from "./profile/Profile";
-import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
 import {observeSections} from "../analytics";
 import "./Main.scss";
+
+// Lazy-loaded below-the-fold sections
+const Skills = lazy(() => import("./skills/Skills"));
+const StackProgress = lazy(() => import("./skillProgress/skillProgress"));
+const WorkExperience = lazy(() => import("./workExperience/WorkExperience"));
+const Projects = lazy(() => import("./projects/Projects"));
+const StartupProject = lazy(() => import("./StartupProjects/StartupProject"));
+const Achievement = lazy(() => import("./achievement/Achievement"));
+const Blogs = lazy(() => import("./blogs/Blogs"));
+const Footer = lazy(() => import("../components/footer/Footer"));
+const Talks = lazy(() => import("./talks/Talks"));
+const Podcast = lazy(() => import("./podcast/Podcast"));
+const Education = lazy(() => import("./education/Education"));
+const ScrollToTopButton = lazy(() => import("./topbutton/Top"));
+const Twitter = lazy(() => import("./twitter-embed/twitter"));
+const Profile = lazy(() => import("./profile/Profile"));
+const SplashScreen = lazy(() => import("./splashScreen/SplashScreen"));
 
 const SECTION_IDS = [
   "greeting",
@@ -69,25 +71,33 @@ const Main = () => {
     <div className={isDark ? "dark-mode" : null}>
       <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
         {isShowingSplashAnimation && splashScreen.enabled ? (
-          <SplashScreen />
+          <Suspense fallback={<div style={{minHeight: "100vh"}} />}>
+            <SplashScreen />
+          </Suspense>
         ) : (
           <>
             <Header />
+            <main>
             <Greeting />
-            <Skills />
-            <StackProgress />
-            <Education />
-            <WorkExperience />
-            <Projects />
-            <StartupProject />
-            <Achievement />
-            <Blogs />
-            <Talks />
-            <Twitter />
-            <Podcast />
-            <Profile />
-            <Footer />
-            <ScrollToTopButton />
+            <Suspense fallback={<div style={{minHeight: "100vh"}} />}>
+              <Skills />
+              <StackProgress />
+              <Education />
+              <WorkExperience />
+              <Projects />
+              <StartupProject />
+              <Achievement />
+              <Blogs />
+              <Talks />
+              <Twitter />
+              <Podcast />
+              <Profile />
+            </Suspense>
+            </main>
+            <Suspense fallback={null}>
+              <Footer />
+              <ScrollToTopButton />
+            </Suspense>
           </>
         )}
       </StyleProvider>

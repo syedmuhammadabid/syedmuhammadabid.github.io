@@ -1,4 +1,4 @@
-@import "../../_globalColor";
+@use "../../_globalColor" as *;
 
 .card-image {
   max-width: 100%;
@@ -12,10 +12,16 @@
   font-weight: 700;
   margin: 15px 0 0 0;
 }
+.dark-mode.card-title {
+  color: $textColorDark;
+}
 .card-subtitle {
   color: $cardSubtitle;
   font-size: 1.063rem;
   line-height: 1.5rem;
+}
+.dark-mode.card-subtitle {
+  color: rgba(255, 255, 255, 0.7);
 }
 .certificate-card {
   background-color: $lightBackground2;
@@ -26,6 +32,11 @@
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+.dark-mode.certificate-card {
+  background-color: $darkBackground;
+  box-shadow: 0px 10px 30px -15px $darkBoxShadow;
+  border-color: rgba(255, 255, 255, 0.1);
 }
 .certificate-detail-div {
   text-align: center;

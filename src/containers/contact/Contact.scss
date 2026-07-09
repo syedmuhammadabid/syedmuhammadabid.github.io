@@ -1,4 +1,4 @@
-@import "../../_globalColor";
+@use "../../_globalColor" as *;
 
 .contact-div-main {
   display: flex;
@@ -26,11 +26,21 @@
   text-decoration: none;
 }
 
+.dark-mode .contact-detail,
+.dark-mode .contact-detail-email {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .contact-detail:hover,
 .contact-detail-email:hover {
   color: $textColor;
   text-shadow: 2px 1px 2px $contactDetailHoverTS;
   transition: all 0.3s;
+}
+
+.dark-mode .contact-detail:hover,
+.dark-mode .contact-detail-email:hover {
+  color: $textColorDark;
 }
 
 .contact-subtitle {

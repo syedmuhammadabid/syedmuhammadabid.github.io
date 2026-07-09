@@ -9,6 +9,7 @@ export default function Button({text, className, href, newTab}) {
         className="main-button"
         href={href}
         target={newTab && "_blank"}
+        rel={newTab ? "noopener noreferrer" : undefined}
         onClick={() => trackEvent("button_click", {button_text: text, link_url: href})}
       >
         {text}

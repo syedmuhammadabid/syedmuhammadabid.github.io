@@ -31,6 +31,7 @@ export default function EducationCard({school}) {
                 className="education-roundedimg"
                 src={school.logo}
                 alt={school.schoolName}
+                loading="lazy"
               />
             </div>
           )}

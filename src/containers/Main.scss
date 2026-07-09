@@ -1,7 +1,15 @@
-@import "../_globalColor";
+@use "../_globalColor" as *;
 
 .dark-mode {
   background-color: $darkBackground;
   color: white;
   transition: "0.1s";
+}
+
+.dark-mode .subTitle {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-mode .greeting-text-p {
+  color: rgba(255, 255, 255, 0.85);
 }

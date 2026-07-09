@@ -1,14 +1,15 @@
 import React, {useState, createRef} from "react";
 import "./ExperienceCard.scss";
-import ColorThief from "colorthief";
 
 export default function ExperienceCard({cardInfo, isDark}) {
   const [colorArrays, setColorArrays] = useState([]);
   const imgRef = createRef();
 
   function getColorArrays() {
-    const colorThief = new ColorThief();
-    setColorArrays(colorThief.getColor(imgRef.current));
+    import("colorthief").then(({default: ColorThief}) => {
+      const colorThief = new ColorThief();
+      setColorArrays(colorThief.getColor(imgRef.current));
+    });
   }
 
   function rgb(values) {
@@ -45,6 +46,7 @@ export default function ExperienceCard({cardInfo, isDark}) {
           src={cardInfo.companylogo}
           alt={cardInfo.company}
           onLoad={() => getColorArrays()}
+          loading="lazy"
         />
       </div>
       <div className="experience-text-details">

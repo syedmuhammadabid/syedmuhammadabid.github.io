@@ -1,4 +1,4 @@
-@import "../../_globalColor";
+@use "../../_globalColor" as *;
 
 .meter {
   height: 20px;
@@ -7,6 +7,10 @@
   -moz-border-radius: 25px;
   -webkit-border-radius: 25px;
   border-radius: 25px;
+}
+
+.dark-mode .meter {
+  background: rgba(255, 255, 255, 0.1);
 }
 .meter > span {
   display: block;

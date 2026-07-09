@@ -5,10 +5,22 @@
 import emoji from "react-easy-emoji";
 import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
 
+// Asset imports
+import nedLogo from "./assets/images/nedLogo.png";
+import ubitLogo from "./assets/images/ubitLogo.jpg";
+import atexLogo from "./assets/images/atexLogo.svg";
+import acceoLogo from "./assets/images/acceoLogo.png";
+import darazLogo from "./assets/images/darazLogo.png";
+import systemsLimitedLogo from "./assets/images/systemsLimitedLogo.jpg";
+import ciphersLabLogo from "./assets/images/ciphersLabLogo.png";
+import developerActivity from "./assets/images/developerActivity.svg";
+import jsFramework from "./assets/images/jsFramework.svg";
+import skillSvg from "./assets/images/skill.svg";
+
 // Splash Screen
 
 const splashScreen = {
-  enabled: true, // set false to disable splash screen
+  enabled: false, // set false to disable splash screen
   animation: splashAnimation,
   duration: 2000 // Set animation duration as per your animation
 };
@@ -130,7 +142,7 @@ const educationInfo = {
   schools: [
     {
       schoolName: "NED University of Engineering and Technology",
-      logo: require("./assets/images/nedLogo.png"),
+      logo: nedLogo,
       subHeader: "Master of Science in Data Science",
       duration: "January 2024 - Present (Expected 2026)",
       desc: "Pursuing an MS in Data Science (EQF Level 7), Karachi, Pakistan.",
@@ -141,7 +153,7 @@ const educationInfo = {
     },
     {
       schoolName: "University of Karachi (UBIT)",
-      logo: require("./assets/images/ubitLogo.jpg"),
+      logo: ubitLogo,
       subHeader: "Bachelor of Engineering in Software Engineering",
       duration: "January 2015 - December 2018",
       desc: "Software Engineering degree (EQF Level 6), Karachi, Pakistan.",
@@ -182,7 +194,7 @@ const workExperiences = {
     {
       role: "Senior Software Engineer",
       company: "Atex Software (via Contour Software)",
-      companylogo: require("./assets/images/atexLogo.svg").default,
+      companylogo: atexLogo,
       date: "November 2024 – Present",
       desc: "Enterprise publishing and subscription management solutions for international media clients.",
       descBullets: [
@@ -195,7 +207,7 @@ const workExperiences = {
     {
       role: "Software Engineer",
       company: "ACCEO Retail Solutions (via Contour Software)",
-      companylogo: require("./assets/images/acceoLogo.png"),
+      companylogo: acceoLogo,
       date: "May 2021 – October 2024",
       desc: "Retail management and ERP-style SaaS applications for North American enterprise clients.",
       descBullets: [
@@ -207,7 +219,7 @@ const workExperiences = {
     {
       role: "Software Developer",
       company: "Daraz (Alibaba Group)",
-      companylogo: require("./assets/images/darazLogo.png"),
+      companylogo: darazLogo,
       date: "October 2019 – April 2021",
       desc: "High-traffic e-commerce platform — one of South Asia's largest online marketplaces.",
       descBullets: [
@@ -219,7 +231,7 @@ const workExperiences = {
     {
       role: "Software Engineer",
       company: "Systems Limited",
-      companylogo: require("./assets/images/systemsLimitedLogo.jpg"),
+      companylogo: systemsLimitedLogo,
       date: "December 2018 – September 2019",
       desc: "Enterprise portal development for government and telecom clients.",
       descBullets: [
@@ -230,7 +242,7 @@ const workExperiences = {
     {
       role: "Software Developer",
       company: "Ciphers Lab",
-      companylogo: require("./assets/images/ciphersLabLogo.png"),
+      companylogo: ciphersLabLogo,
       date: "January 2018 – November 2018",
       desc: "Developed Queno, a mobile-responsive educational communication platform connecting schools and parents, implementing collaboration and engagement features."
     }
@@ -252,7 +264,7 @@ const bigProjects = {
   subtitle: "ENTERPRISE-SCALE SYSTEMS AND DATA PROJECTS I HAVE BUILT",
   projects: [
     {
-      image: require("./assets/images/atexLogo.svg").default,
+      image: atexLogo,
       projectName: "Enterprise Publishing & Subscription Platform",
       projectDesc:
         "Full-stack subscription lifecycle management (onboarding, invoicing, accounts receivable, renewals) with configurable campaigns, upsell flows, and multi-brand landing pages. Integrated Stripe and AWS Cognito SSO for publisher clients across Europe.",
@@ -264,7 +276,7 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/developerActivity.svg").default,
+      image: developerActivity,
       projectName: "Multi-Source ETL Data Pipeline",
       projectDesc:
         "Designed an ETL pipeline ingesting data from Google Drive, CSV, JSON, PostgreSQL, MongoDB, Firebase, and REST APIs, with cleaning, normalisation, aggregation, feature engineering, and validation layers building ML-ready datasets.",
@@ -276,7 +288,7 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/jsFramework.svg").default,
+      image: jsFramework,
       projectName: "AI & Agentic Automation",
       projectDesc:
         "Designing and prototyping Agentic AI systems and LLM-based automation workflows, exploring integration of AI capabilities into full-stack applications.",
@@ -304,7 +316,7 @@ const achievementSection = {
       title: "Introduction to AI Agents",
       subtitle:
         "Certification from DataCamp covering the fundamentals of building and orchestrating AI agents.",
-      image: require("./assets/images/skill.svg").default,
+      image: skillSvg,
       imageAlt: "Introduction to AI Agents Certification",
       footerLink: [
         {
@@ -317,7 +329,7 @@ const achievementSection = {
       title: "Generative AI for Everyone",
       subtitle:
         "Certification from Coursera / DeepLearning.AI covering generative AI concepts and applications.",
-      image: require("./assets/images/skill.svg").default,
+      image: skillSvg,
       imageAlt: "Generative AI Certification",
       footerLink: [
         {
@@ -330,7 +342,7 @@ const achievementSection = {
       title: "IBM Python for Data Science",
       subtitle:
         "Certification from Cognitive Class covering Python programming for data science workflows.",
-      image: require("./assets/images/skill.svg").default,
+      image: skillSvg,
       imageAlt: "IBM Python for Data Science Certification",
       footerLink: [
         {
@@ -343,7 +355,7 @@ const achievementSection = {
       title: "Front-End Web UI Frameworks and Tools",
       subtitle:
         "Certification from Coursera covering modern front-end frameworks, Bootstrap, and UI tooling.",
-      image: require("./assets/images/jsFramework.svg").default,
+      image: jsFramework,
       imageAlt: "Front-End Web UI Frameworks Certification",
       footerLink: [
         {

@@ -1,4 +1,4 @@
-@import "../../_globalColor";
+@use "../../_globalColor" as *;
 
 .achievement-heading {
   font-size: 56px;
@@ -13,6 +13,9 @@
 }
 .subTitle {
   color: $subTitle;
+}
+.dark-mode.subTitle {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Media Query */
