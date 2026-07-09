@@ -1,0 +1,1 @@
+import{S as t}from"./index-BxikI30P.js";import{r}from"./vendor-lottie-CiqUe4rL.js";import"./vendor-react-BfO7Wbi0.js";import"./vendor-twitter-BuEVdetK.js";function i(){const{isDark:o}=r.useContext(t);return null}export{i as default};
