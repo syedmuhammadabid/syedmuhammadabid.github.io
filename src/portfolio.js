@@ -3,7 +3,6 @@
 // To change portfolio colors globally go to the  _globalColor.scss file
 
 import emoji from "react-easy-emoji";
-import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
 
 // Asset imports
 import nedLogo from "./assets/images/nedLogo.png";
@@ -21,7 +20,7 @@ import skillSvg from "./assets/images/skill.svg";
 
 const splashScreen = {
   enabled: false, // set false to disable splash screen
-  animation: splashAnimation,
+  animation: null,
   duration: 2000 // Set animation duration as per your animation
 };
 

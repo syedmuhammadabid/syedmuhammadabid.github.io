@@ -18,7 +18,17 @@ export default defineConfig({
   base: "/",
   build: {
     outDir: "build",
-    sourcemap: false
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split heavy vendor deps into separate cacheable chunks
+          "vendor-react": ["react", "react-dom"],
+          "vendor-lottie": ["lottie-react"],
+          "vendor-twitter": ["react-twitter-embed"]
+        }
+      }
+    }
   },
   optimizeDeps: {
     esbuildOptions: {
@@ -27,7 +37,6 @@ export default defineConfig({
       }
     },
     include: [
-      "react-reveal",
       "react-headroom",
       "react-twitter-embed",
       "colorthief",

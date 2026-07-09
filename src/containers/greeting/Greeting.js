@@ -1,14 +1,31 @@
-import React, {useContext} from "react";
+import React, {useContext, useState, useEffect} from "react";
 import emoji from "react-easy-emoji";
 import "./Greeting.scss";
-import landingPerson from "../../assets/lottie/landingPerson";
-import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 import {illustration, greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 import resumePdf from "./resume.pdf";
 import manOnTable from "../../assets/images/manOnTable.svg";
+
+// Lazy-loaded Lottie wrapper — defers both the library and the 192 KB JSON
+function LazyLottie() {
+  const [LottieComponent, setLottieComponent] = useState(null);
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    Promise.all([
+      import("lottie-react"),
+      import("../../assets/lottie/landingPerson")
+    ]).then(([lottie, data]) => {
+      setLottieComponent(() => lottie.default);
+      setAnimationData(data.default);
+    });
+  }, []);
+
+  if (!LottieComponent || !animationData) return null;
+  return <LottieComponent animationData={animationData} loop={true} />;
+}
 
 export default function Greeting() {
   const {isDark} = useContext(StyleContext);
@@ -55,7 +72,7 @@ export default function Greeting() {
         </div>
         <div className="greeting-image-div">
           {illustration.animated ? (
-            <DisplayLottie animationData={landingPerson} />
+            <LazyLottie />
           ) : (
             <img alt="man sitting on table" src={manOnTable}></img>
           )}
