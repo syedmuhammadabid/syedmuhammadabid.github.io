@@ -1,1 +1,0 @@
-import{j as o,_ as s}from"./index-CRyZkQAZ.js";import{r}from"./vendor-lottie-CiqUe4rL.js";import{L as e}from"./Loading-wZEX-t-e.js";const i=r.lazy(()=>s(()=>import("./vendor-lottie-CiqUe4rL.js").then(t=>t.i),[]));function m({animationData:t}){return o.jsx(r.Suspense,{fallback:o.jsx(e,{}),children:o.jsx(i,{animationData:t,loop:!0})})}export{m as D};
